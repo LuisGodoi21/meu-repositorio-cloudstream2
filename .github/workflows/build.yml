@@ -25,7 +25,7 @@ jobs:
       - name: Build Plugins
         run: |
           chmod +x gradlew
-          ./gradlew makeAll
+          ./gradlew make
 
       - name: Upload Repositorio Pronto
         uses: actions/upload-artifact@v4
