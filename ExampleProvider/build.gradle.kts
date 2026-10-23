@@ -7,15 +7,14 @@ dependencies {
 version = 1
 
 cloudstream {
-    // Nome do plugin que vai aparecer no aplicativo
-    name = "Meus Canais"
+    // CORRIGIDO: Removida a linha 'name = ' que causava erro de reatribuição
+
     description = "Minhas Extensoes"
     authors = listOf("LuisGodoi21")
 
-    // Define quais classes o CloudStream deve carregar
-    providerClassName = "com.example.KairouProvider,com.example.MinhaTelaProvider"
+    // CORRIGIDO: Alterado de 'providerClassName' para 'providerClass'
+    providerClass = "com.example.KairouProvider,com.example.MinhaTelaProvider"
 
-    // CORRIGIDO: Alterado de "LiveStream" para "Live" para alinhar com o padrão do CloudStream
     status = 1 
     tvTypes = listOf("Live", "Movie")
     language = "pt-BR"
