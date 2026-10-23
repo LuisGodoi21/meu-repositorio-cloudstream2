@@ -2,6 +2,7 @@ package com.example
 
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.utils.ExtractorLink
+import com.lagradost.cloudstream3.utils.Qualities
 
 class MinhaTelaProvider : MainAPI() {
     override var mainUrl = "https://minhatela.xyz"
@@ -21,6 +22,17 @@ class MinhaTelaProvider : MainAPI() {
             })
         }
         return newHomePageResponse("Eventos Ao Vivo", liveEvents)
+    }
+
+    // ADICIONADA: Função obrigatória para abrir a página do evento ao vivo
+    override suspend fun load(url: String): LoadResponse? {
+        return newLiveLoadResponse(
+            name = "Evento ao Vivo",
+            url = url,
+            dataUrl = url
+        ) {
+            this.posterUrl = "https://minhatela.xyz"
+        }
     }
 
     override suspend fun loadLinks(data: String, isCasting: Boolean, subtitleCallback: (SubtitleFile) -> Unit, callback: (ExtractorLink) -> Unit): Boolean {
