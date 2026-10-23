@@ -2,6 +2,7 @@ package com.example
 
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.utils.ExtractorLink
+import com.lagradost.cloudstream3.utils.Qualities
 
 class KairouProvider : MainAPI() {
     override var mainUrl = "https://kairou.space"
@@ -32,6 +33,17 @@ class KairouProvider : MainAPI() {
             val url = element.selectFirst("a")?.attr("href") ?: ""
             val poster = element.selectFirst("img")?.attr("src") ?: ""
             newMovieSearchResponse(title, url, TvType.Movie) { this.posterUrl = poster }
+        }
+    }
+
+    // ADICIONADA: Função obrigatória para abrir a página do filme/série antes dos links
+    override suspend fun load(url: String): LoadResponse? {
+        val document = app.get(url).document
+        val title = document.selectFirst("h1, .entry-title")?.text() ?: "Sem Título"
+        val poster = document.selectFirst(".poster img, img")?.attr("src") ?: ""
+        
+        return newMovieLoadResponse(title, url, TvType.Movie, url) {
+            this.posterUrl = poster
         }
     }
 
