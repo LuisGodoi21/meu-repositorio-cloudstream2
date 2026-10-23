@@ -20,6 +20,7 @@ jobs:
 
       - name: Checkout builds
         uses: actions/checkout@v3
+        continue-on-error: true
         with:
           ref: "builds"
           path: "builds"
