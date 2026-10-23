@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -25,12 +25,12 @@ jobs:
       - name: Build Plugins
         run: |
           chmod +x gradlew
-          ./gradlew make
+          ./gradlew makeAll
 
-      - name: Upload Repositório Pronto
+      - name: Upload Repositorio Pronto
         uses: actions/upload-artifact@v4
         with:
-          name: meu-repositorio-cloudstream2
+          name: meu-repositorio-cloudstream
           path: |
-            ExampleProvider/build/*.cs3
-            ExampleProvider/build/plugins.json
+            **/build/*.cs3
+            **/build/plugins.json
