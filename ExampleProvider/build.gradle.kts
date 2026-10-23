@@ -11,8 +11,10 @@ cloudstream {
     description = "Minhas Extensoes"
     authors = listOf("LuisGodoi21")
 
-    // CORREÇÃO: Alinhado com o nome padrão da DSL do CloudStream e passado como lista
-    providerClassName = listOf("com.example.KairouProvider", "com.example.MinhaTelaProvider")
+    providers = listOf(
+    "com.example.KairouProvider",
+    "com.example.MinhaTelaProvider"
+)
 
     status = 1 
     tvTypes = listOf("Live", "Movie")
