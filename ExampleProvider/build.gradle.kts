@@ -3,31 +3,22 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:1.3.2")
 }
 
-// Use an integer for version numbers
+// Use um número inteiro para a versão
 version = 1
 
 cloudstream {
-    // All of these properties are optional, you can safely remove any of them.
+    // Nome do plugin que vai aparecer no aplicativo
+    name = "Meus Canais"
+    description = "Extensões Kairou e MinhaTela"
+    authors = listOf("LuisGodoi21")
 
-    description = "Lorem ipsum"
-    authors = listOf("Cloudburst", "Luna712")
+    // Define quais classes o CloudStream deve carregar
+    providerClassName = "com.example.KairouProvider,com.example.MinhaTelaProvider"
 
-    /**
-    * Status int as one of the following:
-    * 0: Down
-    * 1: Ok
-    * 2: Slow
-    * 3: Beta-only
-    **/
-    status = 1 // Will be 3 if unspecified
-
-    tvTypes = listOf("Movie")
-
-    requiresResources = true
-    language = "en"
-
-    // Random CC logo I found
-    iconUrl = "https://upload.wikimedia.org/wikipedia/commons/2/2f/Korduene_Logo.png"
+    // Configurações recomendadas para canais/filmes do Brasil
+    status = 1 
+    tvTypes = listOf("LiveStream", "Movie")
+    language = "pt-BR"
 }
 
 android {
