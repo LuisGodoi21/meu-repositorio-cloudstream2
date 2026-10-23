@@ -15,9 +15,9 @@ cloudstream {
     // Define quais classes o CloudStream deve carregar
     providerClassName = "com.example.KairouProvider,com.example.MinhaTelaProvider"
 
-    // Configurações recomendadas para canais/filmes do Brasil
+    // CORRIGIDO: Alterado de "LiveStream" para "Live" para alinhar com o padrão do CloudStream
     status = 1 
-    tvTypes = listOf("LiveStream", "Movie")
+    tvTypes = listOf("Live", "Movie")
     language = "pt-BR"
 }
 
