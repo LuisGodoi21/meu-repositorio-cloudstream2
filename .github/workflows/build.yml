@@ -11,19 +11,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          path: "src"
-
-      - name: Checkout builds
-        uses: actions/checkout@v3
-        continue-on-error: true
-        with:
-          ref: "builds"
-          path: "builds"
 
       - name: Setup Java
         uses: actions/setup-java@v3
@@ -33,17 +24,13 @@ jobs:
 
       - name: Build Plugins
         run: |
-          cd src
           chmod +x gradlew
-          ./gradlew make
-          cp -r ExampleProvider/build/*.cs3 ../builds/
-          cp ExampleProvider/build/plugins.json ../builds/
+          ./gradlew ExampleProvider:make
 
-      - name: Push Builds
-        run: |
-          cd builds
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add .
-          git diff-index --quiet HEAD || git commit -m "Update builds"
-          git push origin builds
+      - name: Upload Repositório Pronto
+        uses: actions/upload-artifact@v4
+        with:
+          name: meu-repositorio-cloudstream
+          path: |
+            ExampleProvider/build/*.cs3
+            ExampleProvider/build/plugins.json
