@@ -7,12 +7,12 @@ dependencies {
 version = 1
 
 cloudstream {
-    // CORRIGIDO: Removida a linha 'name = ' que causava erro de reatribuição
-
+    // Mantém a descrição e autores do seu repositório
     description = "Minhas Extensoes"
     authors = listOf("LuisGodoi21")
 
-    providerClass = "com.example.KairouProvider,com.example.MinhaTelaProvider"
+    // CORREÇÃO: Alinhado com o nome padrão da DSL do CloudStream e passado como lista
+    providerClassName = listOf("com.example.KairouProvider", "com.example.MinhaTelaProvider")
 
     status = 1 
     tvTypes = listOf("Live", "Movie")
