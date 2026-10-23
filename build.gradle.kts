@@ -14,8 +14,7 @@ buildscript {
 
     dependencies {
         classpath("com.android.tools.build:gradle:8.7.3")
-        // use a versão estável oficial do Cloudstream do template
-        classpath("com.github.recloudstream:gradle:VERSAO_ESTAVEL_DO_TEMPLATE")
+        classpath("com.github.recloudstream:gradle:1.1.4")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.22")
     }
 }
