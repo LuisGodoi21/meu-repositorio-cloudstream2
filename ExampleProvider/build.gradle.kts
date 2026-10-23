@@ -9,7 +9,7 @@ version = 1
 cloudstream {
     // Nome do plugin que vai aparecer no aplicativo
     name = "Meus Canais"
-    description = "Extensões Kairou e MinhaTela"
+    description = "Minhas Extensoes"
     authors = listOf("LuisGodoi21")
 
     // Define quais classes o CloudStream deve carregar
