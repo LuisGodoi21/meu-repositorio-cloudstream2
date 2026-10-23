@@ -12,8 +12,7 @@ cloudstream {
     description = "Minhas Extensoes"
     authors = listOf("LuisGodoi21")
 
-    // CORRIGIDO: Alterado de 'providerClassName' para 'providerClass'
-    providerClassName = listOf("com.example.KairouProvider", "com.example.MinhaTelaProvider")
+    providerClass = "com.example.KairouProvider,com.example.MinhaTelaProvider"
 
     status = 1 
     tvTypes = listOf("Live", "Movie")
