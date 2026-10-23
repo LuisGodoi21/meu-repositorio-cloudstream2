@@ -25,12 +25,12 @@ jobs:
       - name: Build Plugins
         run: |
           chmod +x gradlew
-          ./gradlew ExampleProvider:make
+          ./gradlew make
 
       - name: Upload Repositório Pronto
         uses: actions/upload-artifact@v4
         with:
-          name: meu-repositorio-cloudstream
+          name: meu-repositorio-cloudstream2
           path: |
             ExampleProvider/build/*.cs3
             ExampleProvider/build/plugins.json
