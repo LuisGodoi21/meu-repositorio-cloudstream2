@@ -8,11 +8,14 @@ buildscript {
         google()
         mavenCentral()
         maven("https://jitpack.io")
+        maven("https://maven.recloudstream.org/releases")
+        maven("https://maven.recloudstream.org/snapshots")
     }
 
     dependencies {
         classpath("com.android.tools.build:gradle:8.7.3")
-        classpath("com.github.recloudstream:gradle:-SNAPSHOT")
+        // use a versão estável oficial do Cloudstream do template
+        classpath("com.github.recloudstream:gradle:VERSAO_ESTAVEL_DO_TEMPLATE")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.22")
     }
 }
@@ -22,6 +25,8 @@ allprojects {
         google()
         mavenCentral()
         maven("https://jitpack.io")
+        maven("https://maven.recloudstream.org/releases")
+        maven("https://maven.recloudstream.org/snapshots")
     }
 }
 
