@@ -11,9 +11,9 @@ cloudstream {
     description = "Minhas Extensoes"
     authors = listOf("LuisGodoi21")
 
-    // A propriedade "providers" da DSL do CloudStream espera um Provider/ProviderFactory,
-    // não uma List direta.
-    providers = providers.provider {
+    // IMPORTANTE: a propriedade "providers" do CloudStream espera um Provider/ProviderFactory
+    // e não uma List normal. Por isso usamos o "providers.provider { ... }"
+    this@cloudstream.providers = providers.provider {
         listOf(
             "com.example.KairouProvider",
             "com.example.MinhaTelaProvider"
